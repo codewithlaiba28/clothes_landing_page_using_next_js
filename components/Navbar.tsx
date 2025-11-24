@@ -40,7 +40,10 @@ export function Navbar() {
                             <Link
                                 key={item}
                                 href="#"
-                                className="text-sm font-medium text-primary hover:text-muted transition-colors"
+                                className={cn(
+                                    "text-sm font-medium transition-colors",
+                                    isScrolled ? "text-primary hover:text-black" : "text-primary hover:text-primary/70"
+                                )}
                             >
                                 {item}
                             </Link>
@@ -49,18 +52,18 @@ export function Navbar() {
 
                     {/* Icons */}
                     <div className="flex items-center gap-4 z-50">
-                        <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-                            <Search className="w-5 h-5 text-primary" />
+                        <button className="p-2 hover:bg-accent/30 rounded-full transition-colors group">
+                            <Search className="w-5 h-5 text-primary group-hover:text-primary" />
                         </button>
-                        <button className="p-2 hover:bg-gray-100 rounded-full transition-colors relative">
-                            <ShoppingBag className="w-5 h-5 text-primary" />
+                        <button className="p-2 hover:bg-accent/30 rounded-full transition-colors relative group">
+                            <ShoppingBag className="w-5 h-5 text-primary group-hover:text-primary" />
                             <span className="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full" />
                         </button>
                         <button
-                            className="md:hidden p-2 hover:bg-gray-100 rounded-full transition-colors"
+                            className="md:hidden p-2 hover:bg-accent/30 rounded-full transition-colors group"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         >
-                            {isMobileMenuOpen ? <X className="w-5 h-5 text-primary" /> : <Menu className="w-5 h-5 text-primary" />}
+                            {isMobileMenuOpen ? <X className="w-5 h-5 text-primary group-hover:text-primary" /> : <Menu className="w-5 h-5 text-primary group-hover:text-primary" />}
                         </button>
                     </div>
                 </div>
