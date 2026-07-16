@@ -58,12 +58,6 @@ function CollectionCard({ collection, index }: { collection: Collection; index: 
                 />
 
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
-
-                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
-                    <div className="bg-white p-2 rounded-full shadow-sm">
-                        <ArrowUpRight className="w-4 h-4 text-primary" />
-                    </div>
-                </div>
             </div>
 
             <div className="flex justify-between items-start">
