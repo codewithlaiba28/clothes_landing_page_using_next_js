@@ -33,10 +33,10 @@ export function ValueProposition() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="flex flex-col items-center text-center space-y-4"
+                            className="flex flex-col items-center text-center space-y-4 group cursor-default hover:scale-105 transition-transform duration-300"
                         >
-                            <div className="p-4 bg-white/15 rounded-full mb-2 shadow-sm">
-                                <value.icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
+                            <div className="p-4 bg-white/15 rounded-full mb-2 shadow-sm group-hover:bg-primary/10 transition-colors duration-300">
+                                <value.icon className="w-6 h-6 text-primary group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" strokeWidth={1.5} />
                             </div>
                             <h3 className="text-xl font-bold text-primary">{value.title}</h3>
                             <p className="text-muted leading-relaxed max-w-xs">{value.description}</p>
