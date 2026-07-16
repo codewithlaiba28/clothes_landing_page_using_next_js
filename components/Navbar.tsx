@@ -36,16 +36,24 @@ export function Navbar() {
 
                     {/* Desktop Links */}
                     <div className="hidden md:flex items-center gap-8">
-                        {["Shop", "Collections", "About", "Journal"].map((item) => (
+                        {[
+                            { name: "Shop", href: "/#collections" },
+                            { name: "Collections", href: "/#collections" },
+                            { name: "About", href: "/about" },
+                            { name: "Journal", href: "/#journal" }
+                        ].map((item) => (
                             <Link
-                                key={item}
-                                href="#"
+                                key={item.name}
+                                href={item.href}
                                 className={cn(
-                                    "text-sm font-medium transition-colors",
-                                    isScrolled ? "text-primary hover:text-black" : "text-primary hover:text-primary/70"
+                                    "relative text-sm font-medium transition-colors",
+                                    "after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:transition-all after:duration-300",
+                                    isScrolled 
+                                        ? "text-primary hover:text-black after:bg-black" 
+                                        : "text-primary hover:text-primary/70 after:bg-primary"
                                 )}
                             >
-                                {item}
+                                {item.name}
                             </Link>
                         ))}
                     </div>
@@ -79,14 +87,20 @@ export function Navbar() {
                         className="fixed inset-0 z-40 bg-white pt-24 px-4 md:hidden"
                     >
                         <div className="flex flex-col gap-6 text-center">
-                            {["Shop", "Collections", "About", "Journal", "Account"].map((item) => (
+                            {[
+                                { name: "Shop", href: "/#collections" },
+                                { name: "Collections", href: "/#collections" },
+                                { name: "About", href: "/about" },
+                                { name: "Journal", href: "/#journal" },
+                                { name: "Account", href: "/#account" }
+                            ].map((item) => (
                                 <Link
-                                    key={item}
-                                    href="#"
+                                    key={item.name}
+                                    href={item.href}
                                     className="text-2xl font-medium text-primary"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
-                                    {item}
+                                    {item.name}
                                 </Link>
                             ))}
                         </div>
