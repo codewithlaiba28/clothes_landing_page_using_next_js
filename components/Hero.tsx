@@ -26,10 +26,10 @@ export function Hero() {
                                 Designed for the modern minimalist.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <Button size="lg" className="bg-primary text-gray-800 hover:bg-primary/90 rounded-none px-8">
+                                <Button size="lg" className="bg-primary text-gray-800 hover:bg-primary/90 rounded-none px-8 hover:scale-105 transition-all duration-300">
                                     Shop Collection
                                 </Button>
-                                <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/5 rounded-none px-8 group">
+                                <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/5 rounded-none px-8 group hover:scale-105 transition-all duration-300">
                                     Explore Lookbook <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                                 </Button>
                             </div>
@@ -37,15 +37,21 @@ export function Hero() {
                     </div>
 
                     {/* Right Image */}
-                    <div className="relative h-[50vh] lg:h-full w-full order-1 lg:order-2 bg-secondary/50">
+                    <div className="relative h-[50vh] lg:h-full w-full order-1 lg:order-2 bg-secondary/50 overflow-hidden">
                         <motion.div
-                            initial={{ opacity: 0, scale: 1.05 }}
+                            initial={{ opacity: 0, scale: 1.1 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1.2, ease: "easeOut" }}
+                            transition={{ duration: 1.5, ease: "easeOut" }}
                             className="absolute inset-0"
                         >
-                            {/* Placeholder for Hero Image */}
-                            <Image src="/Hero-image.png" alt="Hero Image" fill className="object-cover" />
+                            <motion.div 
+                                animate={{ scale: [1, 1.05, 1] }}
+                                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                                className="w-full h-full relative"
+                            >
+                                {/* Placeholder for Hero Image */}
+                                <Image src="/Hero-image.png" alt="Hero Image" fill className="object-cover" />
+                            </motion.div>
                         </motion.div>
                     </div>
                 </div>
