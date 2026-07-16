@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Instagram } from "lucide-react";
-import { Button } from "@/components/ui/Button";
 
 const instagramImages = [
     { id: 1, src: "/images/insta-1.webp", alt: "Lifestyle Shot 1" },
@@ -16,28 +14,20 @@ const instagramImages = [
 
 export function InstagramFeed() {
     return (
-        <section className="py-24 bg-background overflow-hidden">
+        <section id="journal" className="py-24 bg-background overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
                     <h2 className="text-3xl md:text-5xl font-bold mb-2">Follow Us</h2>
-                    <p className="text-gray-500">@antigravity_style</p>
                 </div>
-                <Button
-                    variant="outline"
-                    leftIcon={<Instagram className="w-4 h-4" />}
-                    className="rounded-full"
-                >
-                    Follow on Instagram
-                </Button>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
                 {instagramImages.map((image, index) => (
                     <motion.div
                         key={image.id}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100, damping: 12 }}
                         viewport={{ once: true }}
                         className="relative aspect-square group overflow-hidden cursor-pointer"
                     >
