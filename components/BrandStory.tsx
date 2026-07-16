@@ -54,7 +54,7 @@ export function BrandStory() {
                             </p>
                         </div>
                         <div className="mt-10">
-                            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white rounded-none px-8">
+                            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-black rounded-none px-8">
                                 Read Our Story
                             </Button>
                         </div>
